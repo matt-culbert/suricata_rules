@@ -1,1 +1,1 @@
-alert tcp any any -> any any (msg:"match JA4 hash"; ja4.hash; content:"t13d191000_9dc949149365_e7c285222651"; sid:10000001;)
+alert tcp any any -> any any (msg:"match JA4 hash"; ja4s.hash; content:"t130200_1303_a56c5b993250"; sid:10000001;)
