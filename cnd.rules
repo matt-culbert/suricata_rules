@@ -1,4 +1,4 @@
 alert tcp any any -> any any (msg:"match JA3 digest"; ja3.hash; content:"4287b6079ba0c8f574ae4d871aed15f9"; sid:10000003;)
 alert tcp any any -> any any (msg: "TTL matches CND"; ttl:63; flow: from_server; sid:10000004;)
-alert tcp any any -> any any (msg: "Matched TCP flags within threshold for source"; tcp.flags:AP; threshold: type threshold, track by_src, count 4, seconds 60; rev:2; sid:10000005;)
+alert tcp $HOME_NET any -> $EXTERNAL_NET [1024:] (msg:"A non standard port was used"; sid:10000005;)
 alert tcp any any -> any any (msg: "Matched TCP flags for CND"; tcp.flags:AP; threshold: type threshold, track by_src, count 6, seconds 60; sid:10000006;)
