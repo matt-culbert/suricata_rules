@@ -6,3 +6,4 @@ alert tcp [$HOME_NET, !172.16.1.10, !172.17.1.10] any -> any 1024: (msg:"A non s
 
 alert tcp any any -> any any (msg: "Matched TCP flags for CND"; tcp.flags:AP; threshold: type threshold, track by_src, count 6, seconds 60; sid:100000006;)
 
+alert tcp any any -> any any (msg: "Lua script found a self signed cert"; lua: script1.lua; sid:100000007;)
