@@ -23,7 +23,7 @@ cargo install --force cbindgen
 alias autogens '\
   cd suricata/;\
   echo "Performing autogens";\
-  ./autogen.sh;\
+  ./autogen.sh \
 '
 
 alias linkers '
@@ -35,23 +35,23 @@ alias linkers '
   ln -s /usr/local/include/lua54/ /usr/local/include/lua;\
   ln -s /usr/local/lib/liblua-5.4.a /usr/local/lib/liblua54.a; \
   ln -s /usr/local/lib/liblua-5.4.so /usr/local/lib/liblua54.so;\
-  ln -s /usr/local/libdata/pkgconfig/lua-5.4.pc /usr/local/libdata/pkgconfig/lua.pc\
+  ln -s /usr/local/libdata/pkgconfig/lua-5.4.pc /usr/local/libdata/pkgconfig/lua.pc \
 '
 
 alias flags '
   echo "Setting compiler flags";\
   setenv LUA_CFLAGS "-I/usr/local/include/lua5.4";\
-  setenv LUA_LIBS "-L/usr/local/lib -llua-5.4"\
+  setenv LUA_LIBS "-L/usr/local/lib -llua-5.4" \
 '
 
 alias conf '
   echo "Running configure";\
-  ./configure --enable-lua --with-lua=/usr/local/lib\
+  ./configure --enable-lua --with-lua=/usr/local/lib \
 '
 
 alias maker '
   echo "Running make";\
-  make && make install-full\
+  make && make install-full \
 '
 
 autogens
