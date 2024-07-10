@@ -47,3 +47,5 @@ alias build '\
 linkers
 build
 echo "All done, run source ~/.cshrc"
+echo "This should say Lua support enabled:"
+suricata --build-info | grep LUA
