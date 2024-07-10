@@ -14,7 +14,7 @@ source ~/.cshrc
 echo "Downloading and unpacking Suricata 7.0.6"
 wget https://github.com/OISF/suricata/archive/refs/tags/suricata-7.0.6.tar.gz 
 mkdir suricata
-tar -xzvf suricata-7.0.6.tar.gz -C suricata --strip-components
+tar -xzvf suricata-7.0.6.tar.gz -C suricata --strip-components 1
 
 alias linkers '\
   echo "Creating links"; \
