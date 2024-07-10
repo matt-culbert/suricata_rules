@@ -33,17 +33,13 @@ alias build '\
   echo "Getting subcomponents"; \
   git clone https://github.com/OISF/libhtp; \
   cargo install --force cbindgen; \
-  
   echo "Performing autogens"; \
   ./autogen.sh; \
-  
   echo "Setting compiler flags"; \
   setenv LUA_CFLAGS "-I/usr/local/include/lua5.4"; \
   setenv LUA_LIBS "-L/usr/local/lib -llua-5.4"; \
-
   echo "Running configure"; \
   ./configure --enable-lua --with-lua=/usr/local/lib; \
-
   echo "Running make"; \
   make && make install-full \
 '
