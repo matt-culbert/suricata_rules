@@ -21,36 +21,36 @@ git clone https://github.com/OISF/libhtp suricata/
 cargo install --force cbindgen
 
 alias autogens '\
-  cd suricata/;\
-  echo "Performing autogens";\
+  cd suricata/; \
+  echo "Performing autogens"; \
   ./autogen.sh \
 '
 
-alias linkers '
-  echo "Creating links";\
-  ln -s /usr/local/include/lua54/lua.h /usr/include/lua.h; \
-  ln -s /usr/local/include/lua54/lualib.h /usr/include/lualib.h; \
-  ln -s /usr/local/include/lua54/lauxlib.h /usr/include/lauxlib.h; \
-  ln -s /usr/local/include/lua54/luaconf.h /usr/include/luaconf.h;\
-  ln -s /usr/local/include/lua54/ /usr/local/include/lua;\
-  ln -s /usr/local/lib/liblua-5.4.a /usr/local/lib/liblua54.a; \
-  ln -s /usr/local/lib/liblua-5.4.so /usr/local/lib/liblua54.so;\
-  ln -s /usr/local/libdata/pkgconfig/lua-5.4.pc /usr/local/libdata/pkgconfig/lua.pc \
+alias linkers '\
+  echo "Creating links"; \
+  ln -sf /usr/local/include/lua54/lua.h /usr/include/lua.h; \
+  ln -sf /usr/local/include/lua54/lualib.h /usr/include/lualib.h; \
+  ln -sf /usr/local/include/lua54/lauxlib.h /usr/include/lauxlib.h; \
+  ln -sf /usr/local/include/lua54/luaconf.h /usr/include/luaconf.h; \
+  ln -sf /usr/local/include/lua54/ /usr/local/include/lua; \
+  ln -sf /usr/local/lib/liblua-5.4.a /usr/local/lib/liblua54.a; \
+  ln -sf /usr/local/lib/liblua-5.4.so /usr/local/lib/liblua54.so; \
+  ln -sf /usr/local/libdata/pkgconfig/lua-5.4.pc /usr/local/libdata/pkgconfig/lua.pc \
 '
 
-alias flags '
-  echo "Setting compiler flags";\
-  setenv LUA_CFLAGS "-I/usr/local/include/lua5.4";\
+alias flags '\
+  echo "Setting compiler flags"; \
+  setenv LUA_CFLAGS "-I/usr/local/include/lua5.4"; \
   setenv LUA_LIBS "-L/usr/local/lib -llua-5.4" \
 '
 
-alias conf '
-  echo "Running configure";\
+alias conf '\
+  echo "Running configure"; \
   ./configure --enable-lua --with-lua=/usr/local/lib \
 '
 
-alias maker '
-  echo "Running make";\
+alias maker '\
+  echo "Running make"; \
   make && make install-full \
 '
 
