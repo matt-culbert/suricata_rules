@@ -6,11 +6,10 @@ pkg install lua54 autoconf automake libtool pkgconf wget git
 echo "Downloading Rust"
 curl https://sh.rustup.rs | sh
 
-source ~/.cshrc
-
 echo "Adding Rust to cshrc"
 echo "setenv PATH $HOME/.cargo/bin:$PATH" >> ~/.cshrc
 echo "setenv CARGO_HOME $HOME/.cargo" >> ~/.cshrc
+source ~/.cshrc
 
 echo "Downloading and unpacking Suricata 7.0.6"
 wget https://github.com/OISF/suricata/archive/refs/tags/suricata-7.0.6.tar.gz 
