@@ -27,7 +27,7 @@ alias autogens '\
 '
 
 alias linkers '
-  echo "Creating links"\
+  echo "Creating links";\
   ln -s /usr/local/include/lua54/lua.h /usr/include/lua.h; \
   ln -s /usr/local/include/lua54/lualib.h /usr/include/lualib.h; \
   ln -s /usr/local/include/lua54/lauxlib.h /usr/include/lauxlib.h; \
