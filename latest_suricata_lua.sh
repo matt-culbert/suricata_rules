@@ -12,8 +12,6 @@ echo "setenv CARGO_HOME $HOME/.cargo" >> ~/.cshrc
 source ~/.cshrc
 
 echo "Downloading and unpacking Suricata latest"
-mkdir suricata
-cd suricata
 git clone https://github.com/oisf/suricata
 
 alias linkers '\
